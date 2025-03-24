@@ -12,7 +12,7 @@ const port = 4000;
 app.use(cors());
 
 app.use(express.json());
-app.use('/api/user', userRoutes)
+app.use('/', userRoutes)
 
 const dbURI = process.env.DB_URI;
 // const dbURI = "mongodb://localhost:27017"
