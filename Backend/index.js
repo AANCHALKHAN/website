@@ -5,11 +5,16 @@ import cors from 'cors';
 import userRoutes from './routes/userRoutes.js';
 dotenv.config(); 
 
+app.use(cors({
+    origin: 'https://timely-seahorse-c1785f.netlify.app', // Allow frontend
+    methods: 'GET,POST,PUT,DELETE',
+    allowedHeaders: 'Content-Type,Authorization'
+}));
 
 const app = express();
 const port = 4000;
 
-app.use(cors());
+// app.use(cors());
 
 app.use(express.json());
 app.use('/', userRoutes)
